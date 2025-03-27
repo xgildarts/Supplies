@@ -1,0 +1,263 @@
+
+body {
+    margin: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.main_body {
+    background-image: url("images/Panpacific-University-North-Philippines.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+
+.form_holder {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    backdrop-filter: blur(3px);
+    height: 100vh;
+    width: 100vw;
+}
+
+.login_form {
+    background: linear-gradient(-30deg, #11822b, #16e038);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    padding-top: 20px;
+    padding-left: 70px;
+    padding-bottom: 70px;
+    padding-right: 70px;
+    row-gap: 20px;
+    width: 17vw;
+    height: 65vh;
+    backdrop-filter: blur(100px);
+}
+
+.login_form label {
+    color: white;
+}
+.login_form .row_1 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.login_form .row_1 img {
+    width: 12.03125vw;
+    height: 20.98635886673662vh;
+}
+
+.login_form .row_2 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.login_form .row_2 h2 {
+    color: white;
+    font-size: 2.8em;
+}
+
+.login_form .row_3 {
+    width: 100%;
+}
+.login_form .row_3 input {
+    width: 85%;
+    font-size: 1.2em;
+    padding-bottom: 13px;
+    padding-top: 13px;
+    border-radius: 5px;
+    padding-left: 15%;
+    border: none;
+    outline-color: #40AD39;
+}
+.login_form .row_3 .email_input_div {
+    position: relative;
+}
+.login_form .row_3 .email_input_div i {
+    position: absolute;
+    left: 3%;
+    top: 15%;
+    color: hsla(0, 0%, 0%, 0.849);
+}
+
+.login_form .row_4 {
+    width: 100%;
+}
+.login_form .row_4 input {
+    width: 85%;
+    font-size: 1.1em;
+    padding-bottom: 13px;
+    padding-top: 13px;
+    border-radius: 5px;
+    border: none;
+    padding-left: 15%;
+    outline-color: #40AD39;
+}
+
+.login_form .row_4 .password_input_div  {
+    position: relative;
+}
+.login_form .row_4 .password_input_div .fa-eye-slash {
+    position: absolute;
+    right: 3%;
+    top: 30%;
+    border: none; 
+}
+.login_form .row_4 .password_input_div {
+    position: relative;
+}
+.login_form .row_4 .password_input_div .fa-key {
+    position: absolute;
+    left: 3%;
+    top: 15%;
+    color: hsla(0, 0%, 0%, 0.849);
+}
+
+.login_form .row_5 {
+    width: 100%;
+    position: relative;
+    gap: 120px;
+    color: white;
+}
+.login_form .row_5 .remember_me {
+    width: fit-content;
+    position: absolute;
+    left: 0%;
+}
+.login_form .row_5 .forgot_password {
+    width: fit-content;
+    position: absolute;
+    right: 0%;
+}
+.login_form .row_5 a {
+    color: white;
+}
+
+.login_form .row_6 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.login_form .row_6 button {
+    color: white;
+    width: 100%;
+    height: 5vh;
+    font-size: 1.1em;
+    border-radius: 5px;
+    border: none;
+    background-color: hsl(0, 0%, 0%);
+    cursor: pointer;
+}
+.login_form .row_6 button:hover {
+    background-color: hsl(0, 0%, 20%);
+}
+.login_form .row_6 button:active {
+    background-color: hsl(0, 0%, 60%);
+}
+
+
+/*Modal for successfully login*/
+.modal {
+    width: 100vw;
+    height: 100vh;
+    background-color: gray;
+    z-index: 1;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.successfully_login_modal {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 50px;
+    background-color: rgba(255, 255, 255, 0.888);
+    width: 30vw;
+    height: 40vh;
+    border-radius: 5px;
+    box-shadow: 0 0 50px hsl(0, 0%, 30%);
+
+}
+
+.modal .successfully_login_modal .modal_row_1 {
+    display: flex; 
+    column-gap: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.modal .successfully_login_modal .modal_row_1 .login_status_text {
+    font-size: 2.8em;
+}
+
+.modal .successfully_login_modal i {
+    color: #16e038;
+}
+
+.modal .successfully_login_modal .modal_row_2 {
+    display: flex;
+    justify-content: center;
+}
+
+.modal .successfully_login_modal .modal_row_2 button {
+    width: 150px;
+    height: 40px;
+    background-color: #16e038;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    color: white;
+    cursor: pointer;
+}
+
+.modal .successfully_login_modal button:hover {
+    background-color: hsl(130, 82%, 38%);
+}
+
+.modal .successfully_login_modal button:active {
+    background-color: hsl(130, 82%, 78%);
+}
+
+
+@media (max-width: 1366px) and (max-height: 768px) {
+    .login_form {
+        height: 72vh;
+        width: 23vw;
+    }
+}
+
+@media (max-width: 1024px) and (max-height: 768px) {
+    .login_form {
+        width: 30vw;
+    }
+    .modal .successfully_login_modal .modal_row_1 .login_status_text {
+        font-size: 1.6em;
+    }
+
+    .modal .successfully_login_modal .modal_row_1 i {
+        font-size: 2em;
+    }
+}
+
+
+@media (max-width: 1280px) and (max-height: 1024px) {
+    .login_form {
+        width: 30vw;
+    }
+
+    .modal .successfully_login_modal {
+        height: 30vh;
+    }
+
+    
+}
+
+

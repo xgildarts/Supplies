@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="login_form.css">
+        <script src="https://kit.fontawesome.com/5cff1fbee6.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+       
+        <div class="main_body">
+            <div class="form_holder">
+                <form class="login_form">
+                    <div class="row_1">
+                        <img src="Images/Logo.png">
+                    </div>
+                    <div class="row_2">
+                        <h2>Log In</h2>
+                    </div>
+                    <div class="row_3">
+                        <div class="email_label_div"><label for="">Email</label></div>
+                        <div class="email_input_div">
+                            <input class="email" type="text" placeholder="Enter email" required title="Enter your email">
+                            <i class="fa-solid fa-user fa-2x"></i>
+                        </div>
+                    </div>
+                    <div class="row_4">
+                        <div><label class="email_label_div" for="">Password</label></div>
+                        <div class="password_input_div">
+                            <input autocomplete class="password" type="password" placeholder="Enter password" required title="Enter your password">
+                            <i class="fa-solid fa-eye-slash"></i>
+                            <i class="fa-solid fa-key fa-2x"></i>
+                        </div>
+                    </div>
+                    <div class="row_5">
+                        <div class="remember_me"><input class="remember_me_checkbox" type="checkbox">Remember me</div>
+                        <div class="forgot_password"><a href="">Forgot password?</a></div>
+                    </div>
+                    <div class="row_6">
+                        <button type="submit_btn">Log In</button>
+                    </div>
+                </form>
+
+
+                <div class="modal">
+                    <div class="successfully_login_modal">
+                        <div class="modal_row_1">
+                            <div class="login_status_text">Successfully Login!</div>
+                            <i id="check_icon" class="fa-solid fa-4x fa-check"></i>
+                        </div>
+                        <div class="modal_row_2">
+                            <button class="done_btn">Done</button>
+                        </div>
+                   </div>
+                </div>
+
+
+           </div>
+        </div>
+
+
+        <script src="login_form.js"></script>
+    </body>
+</html>
