@@ -99,6 +99,7 @@ form {
 
 .row_2 select{
     height: 3.5vh;
+    width: 100%;
 }
 
 .row_2 div {
@@ -171,19 +172,18 @@ form {
 
 @media (max-width: 1366px) and (max-height: 768px) {
     form {
-        height: 72vh;
-        width: 23vw;
+        height: 80.1vh;
     }
 }
 
 @media (max-width: 1024px) and (max-height: 768px) {
     form {
-        width: 30vw;
+        
     }
 }
 
 @media (max-width: 1280px) and (max-height: 1024px) {
     form {
-        width: 30vw;
+        height: 67.1vh;
     }
 }
