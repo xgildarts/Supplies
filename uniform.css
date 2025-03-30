@@ -12,7 +12,7 @@ form {
     flex-direction: column;
     align-items: center;
     width: 41.198vw;
-    height: 75.1vh;
+    height: 77.1vh;
     padding-left: 39px;
     padding-right: 39px;
     padding-bottom: 39px;
@@ -138,7 +138,7 @@ form {
     padding-left: 5px;
 }
 
-.row_4 .date{
+.row_4 .date {
     height: 3vh;
 }
 
@@ -150,11 +150,33 @@ form {
 
 .row_5 {
     display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 60px;
+}
+
+.row_5 div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.row_5 input {
+    height: 2.5vh;
+    padding-left: 5px;
+}
+
+.row_5 select {
+    height: 3.2vh;
+}
+
+.row_6 {
+    display: flex;
     justify-content: center;
     margin-top: 25px;
 }
 
-.row_5 button{
+.row_6 button{
     width: 200px;
     height: 40px;
     background-color: #235D1F;
@@ -165,25 +187,38 @@ form {
     cursor: pointer;
 }
 
-.row_5 button:hover {
+.row_6 button:hover {
     background-color: hsl(116, 50%, 34%);
 }
 
 
 @media (max-width: 1366px) and (max-height: 768px) {
     form {
-        height: 80.1vh;
+        margin-top: 30px;
+        height: 85.1vh;
+        width: 55.198vw;
+    }
+
+    .image img {
+        width: 15.03125vw;
     }
 }
 
 @media (max-width: 1024px) and (max-height: 768px) {
     form {
-        
+        height: 84.1vh;
+        width: 55.198vw;
+    }
+    .image img {
+        width: 20.03125vw;
     }
 }
 
 @media (max-width: 1280px) and (max-height: 1024px) {
     form {
-        height: 67.1vh;
+        width: 55.198vw;
+    }
+    .image img {
+        width: 20.03125vw;
     }
 }
