@@ -63,6 +63,11 @@ form.addEventListener("submit", function(e) {
         product_n = `${product_name.value} ${size.value}`
     }
 
+    if(revenue_channel.value == "None") {
+        revenue_channel.value = "";
+    }
+
+
     let payload = {
 
         request_name: "insert",
@@ -90,16 +95,16 @@ form.addEventListener("submit", function(e) {
     })
     .catch((err) => console.error(err));
 
-    // date.value = null;
-    // sku.value = null;
-    // product_name.value = "Choose a product";
-    // size.value = "Choose a size";
-    // revenue_channel.value = "Choose revenue channel";     Here we  stop
-    // quantity.value = 1;
-    // price.value = 0;
-    // receipt_number.value = 0;
-    // name.value = null;
-    // total.value = 0;
+    date.value = "";
+    sku.value = "";
+    product_name.value = "";
+    size.value = "";
+    revenue_channel.value = ""; 
+    quantity.value = "";
+    price.value = "";
+    receipt_number.value = "";;
+    name.value = "";
+    total.value = "";
     
 });
 
@@ -140,7 +145,7 @@ function getSize() {
     })
     .then((response) => response.json())
     .then((val) => {
-        let htmlCode = '<option disabled selected>Choose a size</option>';
+        let htmlCode = '<option value="" disabled selected>Choose a size</option>';
         val.forEach(element => {
             htmlCode += `<option value='${element[0]}'>${element[0]}</option>`;
         });
@@ -214,7 +219,7 @@ function revenueChannel() {
     })
     .then((response) => response.json())
     .then((val) => {
-        let htmlCode = '<option selected disabled>Choose revenue channel</option>';
+        let htmlCode = '<option value="" selected disabled>Choose revenue channel</option>';
         val.forEach(element => {
             htmlCode += `<option value='${element[0]}'>${element[0]}</option>`;
         });
