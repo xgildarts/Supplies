@@ -42,7 +42,7 @@ quantity.addEventListener("input", function(e) {
 
 //Validate quantity input
 quantity.addEventListener("input", function(e) {
-    if(quantity.value <= 0) {
+    if(quantity.value < 0) {
         quantity.value = 1;
     }
 });
@@ -82,29 +82,35 @@ form.addEventListener("submit", function(e) {
 
     };
 
-    fetch("http://localhost/Supplies/uniform_api.php", {
-        method: "POST",
-        header: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(payload)
-    })
-    .then((response) => response.json())
-    .then((val) => {
-        window.alert(val[0]);
-    })
-    .catch((err) => console.error(err));
+    const confirmation = window.confirm("Do you want to save this?");
+    if(confirmation) {
+        fetch("http://localhost/Supplies/uniform_api.php", {
+            method: "POST",
+            header: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(payload)
+        })
+        .then((response) => response.json())
+        .then((val) => {
+            window.alert(val[0]);
+        })
+        .catch((err) => console.error(err));
+    
+        date.value = "";
+        sku.value = "";
+        product_name.value = "";
+        size.value = "";
+        revenue_channel.value = ""; 
+        quantity.value = "";
+        price.value = "";
+        receipt_number.value = "";;
+        name.value = "";
+        total.value = "";
+    } else {
+        return;
+    }
 
-    date.value = "";
-    sku.value = "";
-    product_name.value = "";
-    size.value = "";
-    revenue_channel.value = ""; 
-    quantity.value = "";
-    price.value = "";
-    receipt_number.value = "";;
-    name.value = "";
-    total.value = "";
     
 });
 

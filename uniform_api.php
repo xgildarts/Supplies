@@ -13,17 +13,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if($contents["request_name"] == "uniforms") {
 
-        $uniforms = file_get_contents('https://script.google.com/macros/s/AKfycbzcHUH14SQ9XzXdBQj03MmGZw7zj6QrS9n-3RFie_2UOC1DFTGVAxhEiYxXzFoX_C0WPg/exec?action=uniforms');
+        $uniforms = file_get_contents('https://script.google.com/macros/s/AKfycbwLE_0KfK4IQNObmALU9GVBhCfVdAeN28QgOZypvwlZDlT8ozzAkIfj9lfbiQfYiJu5SA/exec?action=uniforms');
         echo $uniforms;
 
     } else if($contents["request_name"] == "sizes") {
 
-        $sizes = file_get_contents('https://script.google.com/macros/s/AKfycbzcHUH14SQ9XzXdBQj03MmGZw7zj6QrS9n-3RFie_2UOC1DFTGVAxhEiYxXzFoX_C0WPg/exec?action=sizes');
+        $sizes = file_get_contents('https://script.google.com/macros/s/AKfycbwLE_0KfK4IQNObmALU9GVBhCfVdAeN28QgOZypvwlZDlT8ozzAkIfj9lfbiQfYiJu5SA/exec?action=sizes');
         echo $sizes; 
         
     } else if($contents["request_name"] == "comparing") {
 
-        $items = file_get_contents('https://script.google.com/macros/s/AKfycbzcHUH14SQ9XzXdBQj03MmGZw7zj6QrS9n-3RFie_2UOC1DFTGVAxhEiYxXzFoX_C0WPg/exec?action=comparing');
+        $items = file_get_contents('https://script.google.com/macros/s/AKfycbwLE_0KfK4IQNObmALU9GVBhCfVdAeN28QgOZypvwlZDlT8ozzAkIfj9lfbiQfYiJu5SA/exec?action=comparing');
         echo $items; 
 
     } else if($contents["request_name"] == "insert") {
@@ -47,10 +47,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
     } else if($contents["request_name"] == "revenue_channel") {
 
-        $revenue_channel = file_get_contents('https://script.google.com/macros/s/AKfycbzcHUH14SQ9XzXdBQj03MmGZw7zj6QrS9n-3RFie_2UOC1DFTGVAxhEiYxXzFoX_C0WPg/exec?action=revenue_channel');
+        $revenue_channel = file_get_contents('https://script.google.com/macros/s/AKfycbwLE_0KfK4IQNObmALU9GVBhCfVdAeN28QgOZypvwlZDlT8ozzAkIfj9lfbiQfYiJu5SA/exec?action=revenue_channel');
         echo $revenue_channel; 
 
-    }
+    } 
 
     
 }
