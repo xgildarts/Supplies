@@ -3,7 +3,7 @@ body{
     margin: 0;
 }
 
-form{
+form {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -11,10 +11,10 @@ form{
     padding-left: 39px;
     padding-right: 39px;
     padding-bottom: 39px;
-    width: 20.669vw;
-    height: 82vh;
+    width: 35.669vw;
+    height: 80vh;
     margin-top: 25px;
-    gap: 20px;
+    gap: 30px;
     position: relative;
     border-radius: 10px;
     background-color: white;
@@ -68,32 +68,52 @@ img{
 
 
 /*Control all row div*/
-.row_1, .row_2, .row_3, .row_4, .row_5 , .row_6 {
+.row_1, .row_2, .row_3, .row_4, .row_6 {
     display: flex;
-    flex-direction: column;
     width: 100%;
+    gap: 30px;
 }
 
+.row_1 div, .row_2 div, .row_3 div, .row_4 div{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
 /*Control all the input*/
-.row_1 input, .row_3 input, .row_4 input, .row_5 input{
+.row_1 input, .row_2 input, .row_3 input, .row_4 input {
     height: 3.5vh;
     padding-left: 5px;
 }
 
-/*Control all the select*/
-.row_2 select, .row_6 select {
-    height: 4vh;
+.row_5 {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
 }
 
-
-.row_7{
-    display: flex;
-    justify-content: center;
-    margin-top: 15px;
+.row_5 input {
+    height: 3.5vh;
+    padding-left: 5px;
     width: 100%;
 }
 
-.row_7 button {
+/*Control all the select*/
+.row_2 select, .row_4 select {
+    height: 4vh;
+    width: 100%;
+}
+
+
+.row_6 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.row_6 button {
     width: 200px;
     height: 50px;
     background-color: #235D1F;
@@ -105,7 +125,7 @@ img{
 }
 
 
-.row_7 button:hover{
+.row_6 button:hover{
     background-color: hsl(116, 50%, 34%);
 }
 
@@ -114,7 +134,7 @@ img{
     form {
         margin-top: 20px;
         height: 90vh;
-        width: 23vw;
+        width: 40vw;
     }
 
     img {
@@ -130,28 +150,30 @@ img{
 
 @media (max-width: 1280px) and (max-height: 1024px) {
     form {
-        height: 78vh;
-        width: 30vw;
+        width: 50vw;
+        margin-top: 100px;
+        height: 75vh;
     }
 
     img {
         height: 13vh;
- 
+        width: 12.03125vw;;
     }
     
 }
 
 @media (max-width: 1024px) and (max-height: 768px) {
     form {
-        height: 90vh;
-        width: 33vw;
+        width: 45vw;
+        height: 87vh;
     }
 
     img {
         height: 13vh;
+        width: 12.03125vw;;
     }
 
     .row_6 button{
         height: 35px;
     }
-}
+} 

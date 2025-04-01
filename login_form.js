@@ -55,6 +55,8 @@ form.addEventListener("submit", (e) => {
             modal.style.display = "flex";
 
             doneBtn.addEventListener("click", () => {
+                sessionStorage.setItem("username", val[0]);
+                sessionStorage.setItem("password", val[1]);
                 modal.style.display = "none";
                 window.location.href = "selections.html";
             });

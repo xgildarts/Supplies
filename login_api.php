@@ -12,8 +12,8 @@
 
         $contents = json_decode($package, true);
 
-        $username = $contents["email"];
-        $password = $contents["password"];
+        $username = htmlspecialchars($contents["email"]);
+        $password = htmlspecialchars($contents["password"]);
 
         $sql = "INSERT INTO login_information (username, password)
         VALUES (?, ?);";
@@ -38,10 +38,6 @@
     } else if($_SERVER["REQUEST_METHOD"] == "GET") {
 
         include("database.php");
-
-        $package = file_get_contents("php://input");
-
-        $contents = json_decode($package, true);
 
         $sql = "SELECT username, password FROM login_information;";
 

@@ -3,6 +3,15 @@ const uniform_btn = document.querySelector(".uniform_btn");
 const merchandise_btn = document.querySelector(".merchandise_btn");
 const back_btn = document.querySelector(".fa-right-from-bracket");
 
+document.addEventListener("DOMContentLoaded", function(e) {
+    if(sessionStorage.getItem("username") || sessionStorage.getItem("password")) {
+        
+    } else {
+        window.alert("Login first!");
+        window.location.href = "index.html";
+    }
+})
+
 
 if(uniform_btn) {
     uniform_btn.addEventListener("click", (e) => {
@@ -22,8 +31,10 @@ if(merchandise_btn) {
 
 if(back_btn) {
     back_btn.addEventListener("click", (e) => {
-        const result = window.confirm("Are you sure do you want to go back?");
+        const result = window.confirm("do you want to logout?");
         if(result) {
+            sessionStorage.removeItem("username");
+            sessionStorage.removeItem("password");
             window.location.href = "index.html";
         } 
     });    

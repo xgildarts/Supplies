@@ -15,7 +15,12 @@ let revenue_channel = document.querySelector(".revenue_channel");
 
 
 document.addEventListener("DOMContentLoaded", (e) => {
-
+    if(sessionStorage.getItem("username") || sessionStorage.getItem("password")) {
+            
+    } else {
+        window.alert("Login first!");
+        window.location.href = "index.html";
+    }
     getUniformName();
     getSize();
     revenueChannel();
