@@ -67,7 +67,7 @@ form.addEventListener("submit", function(e) {
         revenue_channel.value = "";
     }
 
-
+    
     let payload = {
 
         request_name: "insert",
