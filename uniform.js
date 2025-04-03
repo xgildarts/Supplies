@@ -25,6 +25,8 @@ document.addEventListener("DOMContentLoaded", (e) => {
     getSize();
     revenueChannel();
     autoGeneratePriceAndSKU();
+    setTotal();
+    validation();
 
 });
 
@@ -41,16 +43,32 @@ if(backBtn) {
 }
 
 //Set total
-quantity.addEventListener("input", function(e) {
-    total.value = parseInt(price.value) * parseInt(quantity.value);
-});
+function setTotal() {
+    product_name.addEventListener("change", (e) => {
+        if(price.value) {
+            total.value = price.value * quantity.value;   
+        }
+    });
+    size.addEventListener("change", (e) => {
+        if(price.value) {
+            total.value = price.value * quantity.value;
+        }
+    });
+    quantity.addEventListener("input", function(e) {
+        if(price.value) {
+            total.value = price.value * quantity.value;
+        }
+    });
+}
 
-//Validate quantity input
-quantity.addEventListener("input", function(e) {
-    if(quantity.value < 0) {
-        quantity.value = 1;
-    }
-});
+//Validation
+function validation() {
+    quantity.addEventListener("input", function(e) {
+        if(quantity.value < 0) {
+            quantity.value = 1;
+        }
+    });
+}
 
 
 //Sending a data to google sheet
@@ -73,7 +91,7 @@ form.addEventListener("submit", function(e) {
     }
 
     
-    let payload = {
+    const payload = {
 
         request_name: "insert",
         date: newDate,
@@ -87,7 +105,8 @@ form.addEventListener("submit", function(e) {
 
     };
 
-    const confirmation = window.confirm("Do you want to save this?");
+    const confirmation = window.confirm("Do you want to confirm?");
+
     if(confirmation) {
         fetch("http://localhost/Supplies/uniform_api.php", {
             method: "POST",
