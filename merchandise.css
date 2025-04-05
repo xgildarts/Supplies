@@ -1,6 +1,7 @@
 body{
     font-family: "Rockwell", "Courier", "Georgia", serif;
     margin: 0;
+    position: relative;
 }
 
 form {
@@ -128,6 +129,8 @@ img{
 .row_6 button:hover{
     background-color: hsl(116, 50%, 34%);
 }
+
+
 
 @media (max-width: 1366px) and (max-height: 768px) {
 

@@ -122,6 +122,10 @@ form.addEventListener("submit", function(e) {
     const confirmation = window.confirm("Do you want to confirm?");
 
     if(confirmation) {
+
+        submit_btn.textContent = "Sending...";
+        submit_btn.disabled = true;
+        submit_btn.style.pointerEvents = 'none';
         
         fetch("http://localhost/Supplies/merchandise_api.php", {
             method: "POST",
@@ -131,19 +135,42 @@ form.addEventListener("submit", function(e) {
             body: JSON.stringify(payload)
         })
         .then((response) => response.json())
-        .then((val) => window.alert(val))
-        .catch((err) => console.log(err));
+        .then((val) => {
+
+            window.alert(val); 
+            submit_btn.textContent = "Submit";
+            submit_btn.disabled = false;
+            submit_btn.style.pointerEvents = "auto";
+
+            date.value = "";
+            sku.value = "";
+            merchandise_selection.value = "";
+            revenue_channel.value = ""; 
+            quantity.value = "";
+            price.value = "";
+            orNumber.value = "";;
+            name.value = "";
+            total.value = "";
+
+        })
+        .catch((err) => {
+            submit_btn.textContent = "Submit";
+            submit_btn.disabled = false;
+            submit_btn.style.pointerEvents = "auto";
+            console.log(err);
+
+            date.value = "";
+            sku.value = "";
+            merchandise_selection.value = "";
+            revenue_channel.value = ""; 
+            quantity.value = "";
+            price.value = "";
+            orNumber.value = "";;
+            name.value = "";
+            total.value = "";
+        });
     
-        date.value = "";
-        sku.value = "";
-        merchandise_selection.value = "";
-        size.value = "";
-        revenue_channel.value = ""; 
-        quantity.value = "";
-        price.value = "";
-        orNumber.value = "";;
-        name.value = "";
-        total.value = "";
+
 
     } else {
 

@@ -1,6 +1,7 @@
 
 const backBtn = document.querySelector(".fa-chevron-left");
 const form = document.querySelector("form");
+const submit_btn = document.querySelector(".submit_btn");
 
 let name = document.querySelector(".name");
 let product_name = document.querySelector(".product_name");
@@ -108,6 +109,11 @@ form.addEventListener("submit", function(e) {
     const confirmation = window.confirm("Do you want to confirm?");
 
     if(confirmation) {
+
+        submit_btn.textContent = "Sending...";
+        submit_btn.disabled = true;
+        submit_btn.style.pointerEvents = "none";
+
         fetch("http://localhost/Supplies/uniform_api.php", {
             method: "POST",
             header: {
@@ -118,19 +124,39 @@ form.addEventListener("submit", function(e) {
         .then((response) => response.json())
         .then((val) => {
             window.alert(val[0]);
+            submit_btn.textContent = "Submit";
+            submit_btn.disabled = false;
+            submit_btn.style.pointerEvents = "auto";
+
+            date.value = "";
+            sku.value = "";
+            product_name.value = "";
+            size.value = "";
+            revenue_channel.value = ""; 
+            quantity.value = "";
+            price.value = "";
+            receipt_number.value = "";;
+            name.value = "";
+            total.value = "";
         })
-        .catch((err) => console.error(err));
+        .catch((err) => {
+            console.error(err);
+            submit_btn.textContent = "Submit";
+            submit_btn.disabled = false;
+            submit_btn.style.pointerEvents = "auto";
+
+            date.value = "";
+            sku.value = "";
+            product_name.value = "";
+            size.value = "";
+            revenue_channel.value = ""; 
+            quantity.value = "";
+            price.value = "";
+            receipt_number.value = "";;
+            name.value = "";
+            total.value = "";
+        });
     
-        date.value = "";
-        sku.value = "";
-        product_name.value = "";
-        size.value = "";
-        revenue_channel.value = ""; 
-        quantity.value = "";
-        price.value = "";
-        receipt_number.value = "";;
-        name.value = "";
-        total.value = "";
     } else {
         return;
     }
@@ -260,3 +286,5 @@ function revenueChannel() {
 
 
 }
+
+
