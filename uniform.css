@@ -222,3 +222,37 @@ form {
         width: 20.03125vw;
     }
 }
+
+@media (max-width: 360px) and (max-height: 740px) {
+    form {
+        width: 70vw;
+        height: 117vh;
+        gap: 10px;
+    }
+    .image img {
+        width: 35vw;
+    }
+    .form_holder {
+        height: 200vh;
+    }
+    .row_1 {
+        flex-direction: column;
+        gap: 10px
+    }
+    .row_2 {
+        flex-direction: column;
+        gap: 10px
+    }
+    .row_3 {
+        flex-direction: column;
+        gap: 10px
+    }
+    .row_4 {
+        flex-direction: column;
+        gap: 10px
+    }
+    .row_5 {
+        flex-direction: column;
+        gap: 10px
+    }
+}

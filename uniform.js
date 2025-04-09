@@ -114,7 +114,7 @@ form.addEventListener("submit", function(e) {
         submit_btn.disabled = true;
         submit_btn.style.pointerEvents = "none";
 
-        fetch("http://localhost/Supplies/uniform_api.php", {
+        fetch("http://192.168.100.222/Supplies/uniform_api.php", {
             method: "POST",
             header: {
                 "Content-Type": "application/json"
@@ -169,7 +169,7 @@ form.addEventListener("submit", function(e) {
 //Get all the uniform name from googlesheet
 function getUniformName() {
 
-    fetch("http://localhost/Supplies/uniform_api.php", {
+    fetch("http://192.168.100.222/Supplies/uniform_api.php", {
         method: "POST",
         header: {
             "Content-Type": "application/json"
@@ -192,7 +192,7 @@ function getUniformName() {
 //Get all the sizes from googlesheet
 function getSize() {
 
-    fetch("http://localhost/Supplies/uniform_api.php", {
+    fetch("http://192.168.100.222/Supplies/uniform_api.php", {
         method: "POST",
         header: {
             "Content-Type": "application/json"
@@ -215,7 +215,7 @@ function getSize() {
 //Auto generate
 function autoGeneratePriceAndSKU() {
     
-    fetch("http://localhost/Supplies/uniform_api.php", {
+    fetch("http://192.168.100.222/Supplies/uniform_api.php", {
         method: "POST",
         header: {
             "Content-Type": "application/json"
@@ -266,7 +266,7 @@ function autoGeneratePriceAndSKU() {
 //Get all revenue channel
 function revenueChannel() {
 
-    fetch("http://localhost/Supplies/uniform_api.php", {
+    fetch("http://192.168.100.222/Supplies/uniform_api.php", {
         method: "POST",
         header: {
             "Content-Type": "application/json"

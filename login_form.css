@@ -123,7 +123,6 @@ body {
     color: white;
 }
 .login_form .row_5 .remember_me {
-    width: fit-content;
     position: absolute;
     left: 0%;
 }
@@ -258,6 +257,49 @@ body {
     }
 
     
+}
+
+@media (max-width: 360px) and (max-height: 740px) {
+    .login_form {
+        width: 50vw;
+        height: 65vh;
+    }
+    .login_form .row_1 img {
+        width: 40vw;
+        height: 19vh;
+    }
+    .login_form .row_2 h2 {
+        font-size: 1.8em;
+    }
+    .login_form .row_3 input {
+        width: 80%;
+        font-size: 0.9em;
+        padding-left: 20%;
+    }
+    .login_form .row_4 input {
+        width: 80%;
+        font-size: 0.9em;
+        padding-left: 20%;
+    }
+    .login_form .row_3 .email_input_div i {
+        font-size: 1.5em;
+        top: 20%;
+    }
+    .login_form .row_4 .password_input_div .fa-key {
+        font-size: 1.5em;
+        top: 20%;
+    }
+    .login_form .row_5 {
+        font-size: 0.6em;
+    }
+    .login_form .row_5 a {
+        position: absolute;
+        right: 0%;
+    }
+    .successfully_login_modal {
+        width: 90vw;
+        font-size: 0.8em;
+    }
 }
 
 

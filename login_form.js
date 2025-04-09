@@ -34,7 +34,7 @@ form.addEventListener("submit", (e) => {
     }
 
 
-    fetch("http://localhost/Supplies/login_api.php")
+    fetch("http://192.168.100.222/Supplies/login_api.php")
     .then((res) => res.json())
     .then((val) => {
         if(email.value == val[0] && password.value == val[1]) {

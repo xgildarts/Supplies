@@ -180,3 +180,31 @@ img{
         height: 35px;
     }
 } 
+
+@media (max-width: 360px) and (max-height: 740px) {
+    form {
+        width: 70vw;
+        height: 107vh;
+        gap: 10px;
+    }
+    .row_1, .row_2, .row_3, .row_4 {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .row_5 {
+        width: 100%;
+    }
+    .row_5 input {
+        width: 95%;
+    }
+    .row_6 {
+        margin-top: 20px;
+    }
+    .form_holder {
+        height: 150vh;
+    }
+    img {
+        height: 13vh;
+        width: 30vw;
+    }
+}

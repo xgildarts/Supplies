@@ -40,7 +40,7 @@ async function getMerchandiseListItems() {
     };
     
     try {
-        let res = await fetch("http://localhost/Supplies/merchandise_api.php", {
+        let res = await fetch("http://192.168.100.222/Supplies/merchandise_api.php", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -71,7 +71,7 @@ async function getRevenueChannel() {
     };
     
     try {
-        let res = await fetch("http://localhost/Supplies/merchandise_api.php", {
+        let res = await fetch("http://192.168.100.222/Supplies/merchandise_api.php", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -127,7 +127,7 @@ form.addEventListener("submit", function(e) {
         submit_btn.disabled = true;
         submit_btn.style.pointerEvents = 'none';
         
-        fetch("http://localhost/Supplies/merchandise_api.php", {
+        fetch("http://192.168.100.222/Supplies/merchandise_api.php", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -187,7 +187,7 @@ function merchandiseSelection() {
         request_name: "merchandise"
     };
 
-    fetch("http://localhost/Supplies/merchandise_api.php", {
+    fetch("http://192.168.100.222/Supplies/merchandise_api.php", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
