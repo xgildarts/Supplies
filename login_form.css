@@ -225,77 +225,17 @@ body {
     background-color: hsl(130, 82%, 78%);
 }
 
-/*Laptops*/
 
-/* Medium laptops (e.g., 14-15 inch) */
-@media (min-width: 1281px) and (max-width: 1366px) {
-    .login_form {
-        height: 55vh;
-        width: 30vw;
-    }
-    .login_form .row_1 img {
-        width: 20vw;
-        height: 19vh;
-    }
-}
-  
-/* Large laptops and up (e.g., 15.6" and above) */
-@media (min-width: 1367px) and (max-width: 1440px) {
-    .login_form {
-        height: 55vh;
-        width: 30vw;
-    }
-    .login_form .row_1 img {
-        width: 20vw;
-        height: 19vh;
-    }
-}
-
-/* Small laptops (e.g., 13-inch) */
-@media (min-width: 1024px) and (max-width: 1280px) {
-    .login_form {
-        height: 55vh;
-        width: 30vw;
-    }
-    .login_form .row_1 img {
-        width: 20vw;
-        height: 19vh;
-    }
-}
-
-/*Desktop*/
-
-/*HD Desktop*/
 @media (max-width: 1366px) and (max-height: 768px) {
-    .login_form .row_1 img {
-        width: 13vw;
-    }
     .login_form {
         height: 72vh;
         width: 23vw;
     }
 }
 
-
-/*Standard Desktop VGA resolution*/
-@media (max-width: 1280px) and (max-height: 1024px) {
-    .login_form {
-        width: 30vw;
-        height: 62vh;
-    }
-
-    .modal .successfully_login_modal {
-        height: 30vh;
-    }
-
-    
-}
-
-/*Lowest screen Desktop*/
 @media (max-width: 1024px) and (max-height: 768px) {
     .login_form {
         width: 30vw;
-        height: 72vh;
     }
     .modal .successfully_login_modal .modal_row_1 .login_status_text {
         font-size: 1.6em;
@@ -306,6 +246,7 @@ body {
     }
 }
 
+<<<<<<< HEAD
   
 /*Mobile device*/
 
@@ -399,6 +340,22 @@ body {
 
 /*Pixel 7 and Samsung Galaxy S20 Ultra*/
 @media (max-width: 412px) and (max-height: 915px) {
+=======
+
+@media (max-width: 1280px) and (max-height: 1024px) {
+    .login_form {
+        width: 30vw;
+    }
+
+    .modal .successfully_login_modal {
+        height: 30vh;
+    }
+
+    
+}
+
+@media (max-width: 360px) and (max-height: 740px) {
+>>>>>>> parent of f0a0fcc (V7)
     .login_form {
         width: 50vw;
         height: 65vh;

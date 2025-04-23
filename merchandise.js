@@ -40,7 +40,7 @@ async function getMerchandiseListItems() {
     };
     
     try {
-        let res = await fetch("http://192.168.100.222/Supplies/merchandise_api.php", {
+        let res = await fetch("https://supplies-office-punp.infinityfreeapp.com/merchandise_api.php", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

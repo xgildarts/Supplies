@@ -266,7 +266,7 @@ function autoGeneratePriceAndSKU() {
 //Get all revenue channel
 function revenueChannel() {
 
-    fetch("http://192.168.100.222/Supplies/uniform_api.php", {
+    fetch("https://supplies-office-punp.infinityfreeapp.com/uniform_api.php", {
         method: "POST",
         header: {
             "Content-Type": "application/json"
