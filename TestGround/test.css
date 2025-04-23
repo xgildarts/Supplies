@@ -1,18 +1,5 @@
-.gallery {
-    display: flex;
-}
 
-.gallery div {
-    display: flex;
-    flex-direction: column;
-}
-
-.gallery div img {
-    width: 20vw;
-    height: 30vh;
-}
-
-.gallery div img:hover {
-    border: solid 1px black;
+h1 {
+    font-size: 5vw;
 }
 
