@@ -34,7 +34,7 @@ form.addEventListener("submit", (e) => {
     }
 
 
-    fetch("http://192.168.100.222/Supplies/login_api.php")
+    fetch("http://localhost/Supplies/login_api.php")
     .then((res) => res.json())
     .then((val) => {
         if(email.value == val[0] && password.value == val[1]) {
@@ -42,26 +42,26 @@ form.addEventListener("submit", (e) => {
             const modal = document.querySelector(".modal");
             let checkIcon = document.querySelector("#check_icon");
             let login_status_text = document.querySelector(".login_status_text");
-            let doneBtn = document.querySelector(".done_btn");
+            let doneBtn = document.querySelector(".done_btn");   
 
-            login_status_text.textContent = "Successfully Login!";
+                login_status_text.textContent = "Successfully Login!";
             
-            if(checkIcon.classList[2] == "fa-xmark") {
-                checkIcon.classList.remove("fa-xmark");
-                checkIcon.classList.add("fa-check");
-            } 
+                if(checkIcon.classList[2] == "fa-xmark") {
+                    checkIcon.classList.remove("fa-xmark");
+                    checkIcon.classList.add("fa-check");
+                } 
 
-            checkIcon.style.color = "#16e038";
-            modal.style.display = "flex";
+                checkIcon.style.color = "#16e038";
+                modal.style.display = "flex";
 
-            doneBtn.addEventListener("click", () => {
-                sessionStorage.setItem("username", val[0]);
-                sessionStorage.setItem("password", val[1]);
-                modal.style.display = "none";
-                window.location.href = "selections.html";
-            });
+                doneBtn.addEventListener("click", () => {
 
-            
+                    sessionStorage.setItem("username", val[0]);
+                    sessionStorage.setItem("password", val[1]);
+                    modal.style.display = "none";
+                    window.location.href = "verify.html";
+
+                }); 
 
         } else {
 
@@ -83,7 +83,6 @@ form.addEventListener("submit", (e) => {
             doneBtn.addEventListener("click", () => {
                 modal.style.display = "none";
                 
-
             });
 
         }

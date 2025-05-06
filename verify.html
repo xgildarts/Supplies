@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OTP Verification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .verification-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        input {
+            padding: 10px;
+            margin: 10px 0;
+            width: 200px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #2ecc71;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #27ae60;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="verification-container">
+        <h2>Enter OTP</h2>
+        <input type="text" id="otpInput" placeholder="Enter verification code" maxlength="6" />
+        <br>
+        <button id="verifyBtn">Verify</button>
+    </div>
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", e => {
+            // sendOTP();
+        });
+
+
+        document.getElementById("verifyBtn").addEventListener("click", () => {
+            const otp = document.getElementById("otpInput").value;
+
+            fetch("http://localhost/Supplies/Authenticator/verify_otp.php", {
+                method: "POST",
+                headers: {
+                    "Content-type": "application/json"
+                },
+                body: JSON.stringify({ otp: otp })
+            })
+            .then(res => res.json())
+            .then(val => console.log(val))
+            // .then(response => {
+            //     if (response[0]) {
+            //         alert("OTP Verified!");
+            //         window.location.href = "selections.html";
+            //     } else {
+            //         alert("Invalid code. Redirecting to login...");
+            //         window.location.href = "index.html";
+            //     }
+            //     console.log(response);
+            // })
+            .catch(err => {
+                console.error(err);
+                alert("An error occurred.");
+            });
+        });
+
+
+        async function sendOTP() {
+                const res = await fetch("http://localhost/Supplies/Authenticator/send_otp.php");
+                if(res.ok) {
+                    const response = await res.json();
+                } else {
+                    window.alert("Could not fetch data!");
+                }
+        }
+    </script>
+
+</body>
+</html>
