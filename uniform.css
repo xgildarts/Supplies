@@ -189,6 +189,7 @@ form {
 
 .row_6 button:hover {
     background-color: hsl(116, 50%, 34%);
+    transition: background ease-in-out 0.4s;
 }
 
 

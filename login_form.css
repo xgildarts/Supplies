@@ -150,6 +150,7 @@ body {
     border: none;
     background-color: hsl(0, 0%, 0%);
     cursor: pointer;
+    transition: background ease-in 0.3s;
 }
 .login_form .row_6 button:hover {
     background-color: hsl(0, 0%, 20%);
@@ -282,7 +283,11 @@ body {
 @media (max-width: 1280px) and (max-height: 1024px) {
     .login_form {
         width: 30vw;
-        height: 62vh;
+        height: 72vh;
+    }
+
+    .login_form .row_1 img {
+        width: 15.03125vw;
     }
 
     .modal .successfully_login_modal {

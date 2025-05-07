@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>OTP Verification</title>
+    <link rel="shorcut icon" href="Images/Logo.png">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -50,48 +51,21 @@
 
     <script>
 
-        document.addEventListener("DOMContentLoaded", e => {
-            // sendOTP();
-        });
-
-
         document.getElementById("verifyBtn").addEventListener("click", () => {
+
             const otp = document.getElementById("otpInput").value;
 
-            fetch("http://localhost/Supplies/Authenticator/verify_otp.php", {
-                method: "POST",
-                headers: {
-                    "Content-type": "application/json"
-                },
-                body: JSON.stringify({ otp: otp })
-            })
-            .then(res => res.json())
-            .then(val => console.log(val))
-            // .then(response => {
-            //     if (response[0]) {
-            //         alert("OTP Verified!");
-            //         window.location.href = "selections.html";
-            //     } else {
-            //         alert("Invalid code. Redirecting to login...");
-            //         window.location.href = "index.html";
-            //     }
-            //     console.log(response);
-            // })
-            .catch(err => {
-                console.error(err);
-                alert("An error occurred.");
-            });
+            if(otp == sessionStorage.getItem('otp')) {
+                window.location.href = "selections.html";
+            } else {
+                window.alert("OTP code invalid! redirecting to login page...");
+                window.location.href = "index.html";
+            }
+            
         });
 
 
-        async function sendOTP() {
-                const res = await fetch("http://localhost/Supplies/Authenticator/send_otp.php");
-                if(res.ok) {
-                    const response = await res.json();
-                } else {
-                    window.alert("Could not fetch data!");
-                }
-        }
+
     </script>
 
 </body>

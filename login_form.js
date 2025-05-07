@@ -2,6 +2,25 @@
 
 const form = document.querySelector(".login_form");
 const eye_slash = document.querySelector(".fa-eye-slash");
+const forgot_password = document.querySelector(".forgot_password");
+const submit_btn = document.querySelector(".submit_btn");
+
+forgot_password.addEventListener("click", e => {
+    e.preventDefault();
+    window.alert('Sending recovery password to your email...');
+    submit_btn.textContent = "Sending recovery password...";
+    submit_btn.disabled = true;
+    fetch("http://localhost/Supplies/Authenticator/send_email.php")
+    .then(res => res.json())
+    .then(response => {
+        if(response[0]) {
+            window.alert("Recovery password is successfully sent to your email!");
+            submit_btn.textContent = "Login";
+            submit_btn.disabled = false;
+        }
+    })
+    .catch(err => console.log(err));
+});
 
 eye_slash.addEventListener("click", () => {
     if(eye_slash.classList[2] == "fa-eye") {
@@ -59,7 +78,19 @@ form.addEventListener("submit", (e) => {
                     sessionStorage.setItem("username", val[0]);
                     sessionStorage.setItem("password", val[1]);
                     modal.style.display = "none";
-                    window.location.href = "verify.html";
+                    
+                    window.alert('Sending OTP code to your email...');
+                    submit_btn.textContent = "Sending OTP...";
+                    submit_btn.disabled = true;
+                    fetch("http://localhost/Supplies/Authenticator/send_otp.php")
+                    .then(res => res.json())
+                    .then(response => {
+                        submit_btn.textContent = "Login";
+                        submit_btn.disabled = false;
+                        sessionStorage.setItem('otp', response.otp);
+                        window.location.href = "verify.html";
+                    })
+                    .catch(err => console.log(err));
 
                 }); 
 

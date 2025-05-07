@@ -1,10 +1,10 @@
 <?php
 
+session_start();
+
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: *");
 header("Access-Control-Allow-Methods: POST, GET");
-
-session_start();
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -31,7 +31,7 @@ try {
     $mail->Subject = "Verification Code";
     $mail->Body = $otp;
     $mail->send();
-    echo json_encode(['Verification code successfully sent!']);
+    echo json_encode(['otp' => $otp]);
 
 } catch(Exception $e) {
 
